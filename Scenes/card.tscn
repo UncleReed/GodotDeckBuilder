@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq2x871v2iwee"]
+
+[ext_resource type="Script" path="res://Scripts/card.gd" id="1_kcs4r"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_808pf"]
+size = Vector2(200, 300)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_768i3"]
+size = Vector2(193, 293)
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_kcs4r")
+
+[node name="BG" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_808pf")
+
+[node name="CardName" type="Label" parent="."]
+offset_left = -92.0
+offset_top = -141.0
+offset_right = -45.0
+offset_bottom = -118.0
+text = "Name"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_768i3")
+
+[node name="CardImage" type="Node2D" parent="."]
+
+[node name="Cost" type="Node2D" parent="."]
+position = Vector2(-88, 118)
+
+[node name="Label" type="Label" parent="Cost"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Cost
+"

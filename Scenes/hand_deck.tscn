@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://befys7ybrbo76"]
+
+[ext_resource type="Script" path="res://Scripts/hand_deck.gd" id="1_r3j1d"]
+
+[node name="HandDeck" type="Node2D"]
+script = ExtResource("1_r3j1d")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Create card_1
+"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_top = 41.0
+offset_right = 114.0
+offset_bottom = 72.0
+text = "Create card_2
+"
+
+[node name="SpawnPoint" type="Node2D" parent="CanvasLayer"]
+position = Vector2(429, 167)
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
