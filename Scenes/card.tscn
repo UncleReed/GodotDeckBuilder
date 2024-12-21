@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dq2x871v2iwee"]
 
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_kcs4r"]
-[ext_resource type="Texture2D" uid="uid://cduda41040rgx" path="res://Images/Cards/Test/cardBack_blue1.png" id="2_yyjwn"]
+[ext_resource type="Texture2D" uid="uid://cduda41040rgx" path="res://Images/Cards/Test/water_BG.png" id="2_yyjwn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iffya"]
 size = Vector2(140, 190)

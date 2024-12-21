@@ -1,5 +1,5 @@
 extends Node2D
-const HAND_COUNT = 3
+const HAND_COUNT = 4
 const CARD_SCENE_PATH = "res://Scenes/card.tscn"
 const CARD_WIDTH = 150
 const HAND_POS_Y = 900
@@ -16,6 +16,7 @@ func _ready() -> void:
 		var new_card = card_scene.instantiate()
 		$"../CardManager".add_child(new_card)
 		new_card.name = "Card"
+		new_card.set_values(i, "Card", preload("res://Images/Cards/Test/fire_BG.png"))
 		add_card_to_hand(new_card)
 		
 func add_card_to_hand(card):

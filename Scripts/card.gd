@@ -2,10 +2,11 @@ class_name Card extends Node2D
 
 @export var CardName: String = "CardName"
 @export var CardCost: int = 1
-@export var CardImage: Node2D
+@export var BG = preload("res://Images/Cards/Test/water_BG.png")
 
 @onready var CostLabel: Label = $Cost/Label
 @onready var NameLabel: Label = $CardName
+@onready var BG_Image: Sprite2D = $BG_Image
 
 signal hovered
 signal hovered_off
@@ -17,14 +18,16 @@ func _ready():
 	get_parent().connect_card_signals(self)
 	
 	
-	set_values(CardCost, CardName)
+	set_values(CardCost, CardName, BG)
 	#visible = false
 	
-func  set_values(_cost: int, _name: String):
+func  set_values(_cost: int, _name: String, _BG):
 	CardName = _name
 	CardCost = _cost
+	BG = _BG
 	CostLabel.set_text(str(_cost))
 	NameLabel.set_text(_name)
+	BG_Image.texture = _BG
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

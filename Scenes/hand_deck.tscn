@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://befys7ybrbo76"]
+[gd_scene load_steps=3 format=3 uid="uid://befys7ybrbo76"]
 
 [ext_resource type="Script" path="res://Scripts/hand_deck.gd" id="1_r3j1d"]
-[ext_resource type="PackedScene" uid="uid://ijpkxvs8pte5" path="res://Scenes/card2.tscn" id="2_6gim6"]
 [ext_resource type="Script" path="res://Scripts/card_manager.gd" id="2_ceolk"]
 
 [node name="HandDeck" type="Node2D"]
@@ -28,6 +27,16 @@ position = Vector2(429, 167)
 [node name="CardManager" type="Node2D" parent="CanvasLayer"]
 script = ExtResource("2_ceolk")
 
-[node name="Card" parent="CanvasLayer/CardManager" instance=ExtResource("2_6gim6")]
+[node name="Card" parent="CanvasLayer/CardManager"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
