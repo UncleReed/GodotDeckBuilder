@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2bwqys65gcvi"]
+
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_5qgox"]
+[ext_resource type="PackedScene" uid="uid://eml7ce8s1p6u" path="res://Scenes/card_slot.tscn" id="1_jpume"]
+
+[node name="GridContainer" type="GridContainer"]
+offset_right = 8.0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+script = ExtResource("1_5qgox")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 200.0
+
+[node name="CardSlot" parent="Control/ColorRect" instance=ExtResource("1_jpume")]
+position = Vector2(75, 100)

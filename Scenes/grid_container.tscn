@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blcy7lrm7vrgp"]
+
+[ext_resource type="Script" path="res://Scripts/grid_container.gd" id="1_u1icm"]
+
+[node name="GridContainer" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_u1icm")

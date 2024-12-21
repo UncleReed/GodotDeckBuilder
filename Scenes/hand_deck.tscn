@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://befys7ybrbo76"]
+[gd_scene load_steps=4 format=3 uid="uid://befys7ybrbo76"]
 
 [ext_resource type="Script" path="res://Scripts/hand_deck.gd" id="1_r3j1d"]
+[ext_resource type="PackedScene" uid="uid://ijpkxvs8pte5" path="res://Scenes/card2.tscn" id="2_6gim6"]
+[ext_resource type="Script" path="res://Scripts/card_manager.gd" id="2_ceolk"]
 
 [node name="HandDeck" type="Node2D"]
 script = ExtResource("1_r3j1d")
@@ -22,5 +24,10 @@ text = "Create card_2
 
 [node name="SpawnPoint" type="Node2D" parent="CanvasLayer"]
 position = Vector2(429, 167)
+
+[node name="CardManager" type="Node2D" parent="CanvasLayer"]
+script = ExtResource("2_ceolk")
+
+[node name="Card" parent="CanvasLayer/CardManager" instance=ExtResource("2_6gim6")]
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

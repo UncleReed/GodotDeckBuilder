@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwx6108l111np"]
+
+[ext_resource type="Script" path="res://Scripts/card_manager.gd" id="1_r31yk"]
+[ext_resource type="PackedScene" uid="uid://1dq33r4txsea" path="res://Scenes/grid.tscn" id="3_ejb5w"]
+[ext_resource type="PackedScene" uid="uid://c5n2ushcehsv4" path="res://Scenes/hand.tscn" id="4_r6u21"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("1_r31yk")
+
+[node name="Hand" parent="." instance=ExtResource("4_r6u21")]
+
+[node name="Grid" parent="." instance=ExtResource("3_ejb5w")]
+columns = 4
+rows = 3

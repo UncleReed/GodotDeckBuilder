@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn7yi5fehawj4"]
+
+[ext_resource type="PackedScene" uid="uid://eml7ce8s1p6u" path="res://Scenes/card_slot.tscn" id="1_ltqkh"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CardSlot" parent="." instance=ExtResource("1_ltqkh")]
+position = Vector2(74, 99)
