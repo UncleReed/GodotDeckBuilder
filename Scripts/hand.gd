@@ -5,18 +5,26 @@ const CARD_WIDTH = 150
 const HAND_POS_Y = 900
 var player_hand = []
 var center_screen_x
+@export var card_types: Resource
 
 
+var card_dic = { "fire": "res://Images/Cards/Test/fire_BG.png",
+		"water": "res://Images/Cards/Test/water_BG.png",
+		"earth": "res://Images/Cards/Test/earth_BG.png",
+		"air": "res://Images/Cards/Test/air_BG.png"
+}
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	center_screen_x = get_viewport().size.x/2 
 	var card_scene = preload(CARD_SCENE_PATH)
 	for i in range(HAND_COUNT):
+		var path_to_card_BG: String = card_dic.values()[i]
 		var new_card = card_scene.instantiate()
 		$"../CardManager".add_child(new_card)
 		new_card.name = "Card"
-		new_card.set_values(i, "Card", preload("res://Images/Cards/Test/fire_BG.png"))
+		new_card.set_values(i, "Card", load(path_to_card_BG)) #тут нужно разобраться чтобы загружать из внешней библиотеки
+		
 		add_card_to_hand(new_card)
 		
 func add_card_to_hand(card):

@@ -1,2 +1,2 @@
 extends Resource
-@export var card_data: Dictionary = {}
+@export var card_types: Dictionary = {}
