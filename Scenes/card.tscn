@@ -18,17 +18,18 @@ texture = ExtResource("2_yyjwn")
 shape = SubResource("RectangleShape2D_iffya")
 
 [node name="CardName" type="Label" parent="."]
-offset_left = -63.0
-offset_top = -88.0
-offset_right = -16.0
-offset_bottom = -65.0
+offset_left = -23.0
+offset_top = -45.0
+offset_right = 24.0
+offset_bottom = -22.0
 text = "Name"
 
 [node name="Cost" type="Node2D" parent="."]
 position = Vector2(-63, 66)
 
 [node name="Label" type="Label" parent="Cost"]
-offset_right = 40.0
+offset_left = 45.0
+offset_right = 85.0
 offset_bottom = 23.0
 text = "Cost
 "

@@ -11,11 +11,15 @@ func _ready() -> void:
 	first_slot_pos_x = get_viewport().size.x/2 - width_offset * columns/2 + width_offset/2
 	first_slot_pos_y = get_viewport().size.y/2 - hight_offset * rows/2
 	var card_slot = preload(CARD_SLOT_PATH)
-	for x in range(columns):
-		for y in range(rows):
+	var array_number = 0
+	for y in range(rows):
+		for x in range(columns):
 			var new_slot = card_slot.instantiate()
 			add_child(new_slot)
 			new_slot.position = Vector2(first_slot_pos_x + width_offset*x, first_slot_pos_y + hight_offset*y)
+			var array_pos = str(x) + " / " + str(y)
+			new_slot.show_state(array_pos, str(array_number))
+			array_number+=1
 			print(new_slot.position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

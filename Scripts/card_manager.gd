@@ -40,6 +40,8 @@ func finish_drag():
 		card_dragged.position = card_slot_found.position
 		card_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		card_slot_found.card_in_slot = true
+		var card_name = card_dragged.get_node("CardName").text
+		card_slot_found.show_card_info(card_name)
 	else:
 		player_hand_ref.add_card_to_hand(card_dragged)
 	card_dragged = null
