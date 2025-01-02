@@ -35,7 +35,7 @@ func start_drag(card):
 func finish_drag():
 	card_dragged.scale = Vector2(1.05,1.05)
 	var card_slot_found = raycat_card_slot()
-	if card_slot_found and not card_slot_found.card_in_slot and card_slot_found.slot_interactable:
+	if card_slot_found and not card_slot_found.card_in_slot and card_slot_found.slot_available_for_drop:
 		player_hand_ref.remove_card_from_hand(card_dragged)
 		card_dragged.position = card_slot_found.position
 		card_dragged.get_node("Area2D/CollisionShape2D").disabled = true

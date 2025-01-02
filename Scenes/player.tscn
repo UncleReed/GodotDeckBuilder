@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c74ooq5ou6ltu"]
+
+[node name="Player" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -38.675
+offset_top = -38.115
+offset_right = 39.325
+offset_bottom = 41.885
+color = Color(0.258824, 0.627451, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 31.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 19.0
+offset_right = 56.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)

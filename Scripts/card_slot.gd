@@ -15,11 +15,12 @@ func show_slot_state(array_pos, array_number, _slot_empty, _slot_available_for_d
 	else:
 		$BG/ColorRect.visible = true
 		
-	if _slot_interactable:
+	if _slot_available_for_drop:
 		$BG.modulate = Color(1,1,1,BG_Alpha_Interactable)
 	else:
 		$BG.modulate = Color(1,1,1,BG_Alpha_notInteractable)
 		
+	slot_available_for_drop = _slot_available_for_drop
 	slot_interactable = _slot_interactable
 	
 	
