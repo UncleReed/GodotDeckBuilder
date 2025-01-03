@@ -22,7 +22,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			var card = raycat_card()
-			if card:
+			if card and not card.card_on_grid: #это какой то костыль чтобы нельзя было забрать карту с поля, надо разобраться
 				start_drag(card)
 		else:
 			if card_dragged:
@@ -42,6 +42,7 @@ func finish_drag():
 		card_slot_found.card_in_slot = true
 		var card_name = card_dragged.get_node("CardName").text
 		card_slot_found.show_card_info(card_name)
+		card_dragged.card_on_grid = true
 	else:
 		player_hand_ref.add_card_to_hand(card_dragged)
 	card_dragged = null
@@ -62,7 +63,9 @@ func raycat_card_slot():
 	parameters.collision_mask = COLLISION_MASK_CARD_SLOT
 	var result = space_state.intersect_point(parameters)
 	if result.size()>0:
+		print(2)
 		return result[0].collider.get_parent()
+	print(3)
 	return null
 
 func raycat_card():
@@ -73,7 +76,10 @@ func raycat_card():
 	parameters.collision_mask = COLLISION_MASK_CARD
 	var result = space_state.intersect_point(parameters)
 	if result.size()>0:
+		print(1)
 		return get_top_card(result)
+		
+	print(0)
 	return null
 	
 func get_top_card(cards):

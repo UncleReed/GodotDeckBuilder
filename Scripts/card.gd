@@ -12,18 +12,20 @@ signal hovered
 signal hovered_off
 
 var starting_position 
+var card_on_grid = false
 
 func _ready():
 	#All cards must be a child of card_manager
 	get_parent().connect_card_signals(self)
 	
 	
-	set_values(CardCost, CardName, BG)
+	set_values(CardCost, CardName, BG, card_on_grid)
 	#visible = false
 	
-func  set_values(_cost: int, _name: String, _BG):
+func  set_values(_cost: int, _name: String, _BG, _card_on_grid):
 	CardName = _name
 	CardCost = _cost
+	card_on_grid = _card_on_grid
 	BG = _BG
 	CostLabel.set_text(str(_cost))
 	NameLabel.set_text(_name)

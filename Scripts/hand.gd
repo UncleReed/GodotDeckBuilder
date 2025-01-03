@@ -24,7 +24,8 @@ func _ready() -> void:
 		var new_card = card_scene.instantiate()
 		$"../CardManager".add_child(new_card)
 		new_card.name = "Card"
-		new_card.set_values(i, name_card, load(path_to_card_BG)) #тут нужно разобраться чтобы загружать из внешней библиотеки
+		var card_on_grid = false
+		new_card.set_values(i, name_card, load(path_to_card_BG), card_on_grid) #тут нужно разобраться чтобы загружать из внешней библиотеки
 		
 		add_card_to_hand(new_card)
 		

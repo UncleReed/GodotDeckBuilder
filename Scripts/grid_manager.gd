@@ -64,15 +64,15 @@ func spawn_cards():
 	var card_scene = preload(CARD_SCENE_PATH)
 	for slot in slots_on_grid:
 		if not slot["slot_available_for_drop"]:
-			print (slot.position)
-			
 			var i = randi() % 4
 			var path_to_card_BG: String = card_dic.values()[i]
 			var name_card: String = card_dic.keys()[i]
 			var new_card = card_scene.instantiate()
+			var card_on_grid = true
 			$"../CardManager".add_child(new_card)
 			new_card.name = "Card"
-			new_card.set_values(i, name_card, load(path_to_card_BG)) #тут нужно разобраться чтобы загружать из внешней библиотеки
+			new_card.set_values(i, name_card, load(path_to_card_BG), card_on_grid) #тут нужно разобраться чтобы загружать из внешней библиотеки
+			slot.card_in_slot = true #нужно ли или лучше карте передавать инфу о том что она больше не доступна для драга
 			new_card.position = slot.position
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
